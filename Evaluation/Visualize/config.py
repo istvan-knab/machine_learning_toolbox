@@ -22,7 +22,7 @@ class InputProcessing():
 
         if self.PLOT_CLASS == "seaborn":
             pass
-        
+
         return "string"
 
 class ConfigParameters(Enum):
