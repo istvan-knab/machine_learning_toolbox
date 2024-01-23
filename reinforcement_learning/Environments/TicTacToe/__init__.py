@@ -24,7 +24,7 @@ class TicTacToe(gym.Env):
         return self.state
 
     def render(self, mode='human'):
-        ...
+        print(self.state)
 
     def seed(self, seed):
         ...
@@ -46,3 +46,8 @@ class TicTacToe(gym.Env):
 
     def logger(self):
         ...
+
+
+if __name__ == '__main__':
+    env = TicTacToe()
+    env.render()
