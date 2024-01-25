@@ -2,12 +2,14 @@ import yaml
 import gymnasium as gym
 
 from reinforcement_learning.DQN.agent import DQNAgent
+from reinforcement_learning.Log.neptune import Neptune
+from reinforcement_learning.Log.console_logger import ConsoleLogger
 
 def initialize() -> dict:
     with open('params.yaml', 'r') as file:
         config = yaml.safe_load(file)
         print(type(config))
-    return
+    return {}
 
 
 if __name__ == '__main__':
