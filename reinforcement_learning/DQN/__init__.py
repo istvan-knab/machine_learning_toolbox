@@ -1,5 +1,6 @@
 import yaml
 import gymnasium as gym
+from collections import namedtuple
 
 from reinforcement_learning.DQN.agent import DQNAgent
 from reinforcement_learning.Log.neptune import Neptune
@@ -27,6 +28,7 @@ if __name__ == '__main__':
             #action = agent.act(state)
             next_state, reward, done, _ = env.step(0)[:4]
             #agent.train(state, action, reward, next_state, done)
+
             state = next_state
             env.render()
 
