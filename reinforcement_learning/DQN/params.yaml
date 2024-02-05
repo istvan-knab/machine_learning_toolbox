@@ -1,4 +1,21 @@
-EPISODES = 300
-ALPHA = 0.001
-GAMMA = 0.1
-EPSILON = 0.995
+#hyperparameters
+ALPHA: 0.001
+GAMMA: 0.99
+BATCH_SIZE: 1024
+EPSILON_START: 1.0
+EPSILON_DECAY: 0.997
+MEMORY_SIZE: 10000
+EPISODES : 300
+MAX_STEP : 500
+TAU : 10
+SEED : 0
+
+#network information
+HIDDEN_LAYERS:
+  - 64
+  - 16
+state_size : 4
+action_size : 2
+
+#hardware
+device : cuda

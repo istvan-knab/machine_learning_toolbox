@@ -10,16 +10,26 @@ def initialize() -> dict:
     with open('params.yaml', 'r') as file:
         config = yaml.safe_load(file)
         print(type(config))
-    return {}
+    return config
 
 
 if __name__ == '__main__':
+
     # creating environment
     env = gym.make('CartPole-v1',render_mode='human')
 
+    # Determine hyperparameters
     config = initialize()
+
+    #Add logger
+    logger = ConsoleLogger(config)
+
     # adding an agent
-    #agent = DQNAgent()
+    agent = DQNAgent(input_layer = config["state_size"], hidden_layers=config["HIDDEN_LAYERS"],
+                     output_layer = config["action_size"])
+
+    #initialize target network
+    target = agent
     # training loop
     for episode in range(1000):
         state = env.reset()
