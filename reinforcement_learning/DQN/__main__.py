@@ -7,6 +7,11 @@ from reinforcement_learning.Log.neptune import Neptune
 from reinforcement_learning.Log.console_logger import ConsoleLogger
 
 def initialize() -> dict:
+    """
+    Reading learning parameters from .yaml file
+    :return: a dictionary containing the parameters
+    """
+
     with open('params.yaml', 'r') as file:
         config = yaml.safe_load(file)
         print(type(config))
@@ -25,7 +30,8 @@ if __name__ == '__main__':
     logger = ConsoleLogger(config)
 
     # adding an agent
-    agent = DQNAgent(input_layer = config["state_size"], hidden_layers=config["HIDDEN_LAYERS"],
+    agent = DQNAgent(input_layer = config["state_size"],
+                     hidden_layers=config["HIDDEN_LAYERS"],
                      output_layer = config["action_size"])
 
     #initialize target network
